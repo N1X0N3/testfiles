@@ -9,4 +9,4 @@ If your main project file is not of package "main" and is called via a seperate 
 Once you have made the necessary changes to your file, if needed, change the function called at line 30 of the goreloaded test file to the main project function if it is different to "GoReloaded()"
 
 Finally to run the test, in a terminal cd to the project folder and run the following command:
-go test <"main project file name"> goreloaded_test.go
+\ngo test <"main project file name"> goreloaded_test.go
