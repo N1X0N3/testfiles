@@ -1,10 +1,10 @@
 <h1>go-reloaded test file</h1>
 
-This test file will check your go-reloaded project against the test cases on the intra audit web page.
+This test file will check your go-reloaded project against **all** test cases simultaneously on the intra audit web page.
 
 The test file needs to be copied to your project folder, the same folder that your main project file is located.
 
-If your main project file is of package "main" and your project is processed in the "main()" function, then you will need to change the name of that function to GoReloaded(), or another name of your choosing (has to start with a capital letter, to make it public), and then create another function called main() where you call the original functions new name. The function names should now look like this:
+If your main project file is of package "main" and your project is processed in the "main()" function, then you will need to change the name of that function to GoReloaded(), or another name of your choosing (has to start with a capital letter, to make it transferable to the test file), and then create another function called main() where you call the original functions new name. The function names should now look like this:
 
 ![expected_func_names](https://user-images.githubusercontent.com/81628708/137346531-2c1855c3-362d-40f9-93d9-6ab38279a275.png)
 
