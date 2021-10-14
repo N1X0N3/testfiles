@@ -13,7 +13,7 @@ If your main project file is not of package "main" and is called via a seperate 
 Once you have made the necessary changes to your file, if needed, change the function called at line 30 of the goreloaded test file to the main project function if it is different to "GoReloaded()".
 
 Finally to run the test, in a terminal cd to the project folder and run the following command (replacing FILE with your main project file): <br/>
-go test PROJECTNAME goreloaded_test.go
+go test FILE goreloaded_test.go
 
 ![test_command](https://user-images.githubusercontent.com/81628708/137346962-c5078173-f5fe-4a4d-aed2-2fbb70518d55.png)
 
