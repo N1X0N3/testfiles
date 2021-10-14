@@ -15,8 +15,8 @@ func TestGoReloaded(t *testing.T) {
 	os.Args = []string{"cmd", inputFile, outputFile}
 
 	/*	Each element of testCases contains a pair of strings, the first string of the
-		pair is what should be the contents of the input file, the second is what should
-		be the contents of the output file */
+		pair is what is to be written to the input file, the second is what should be
+		the contents of the output file */
 	testCases := [][]string{
 		{"If I make you BREAKFAST IN BED (low, 3) just say thank you instead of: how (cap) did you get in my house (up, 2) ?",
 			"If I make you breakfast in bed just say thank you instead of: How did you get in MY HOUSE?"},
@@ -28,23 +28,23 @@ func TestGoReloaded(t *testing.T) {
 			"Harold Wilson: 'I’m an optimist, but an optimist who carries a raincoat.'"},
 	}
 
-	for _, each := range testCases {
+	for _, testCase := range testCases {
 		// Write the string to be processed to the input file
-		if err := ioutil.WriteFile(inputFile, []byte(each[0]), os.ModePerm); err != nil {
+		if err := ioutil.WriteFile(inputFile, []byte(testCase[0]), os.ModePerm); err != nil {
 			panic(err)
 		}
 
 		// CHANGE THIS FUNCTION TO YOUR FUNCTION NAME IF DIFFERENT
 		GoReloaded()
 
-		/*	Read the contents of the output file, checking if it is the same
-			as is expected */
+		/*	Read the contents of the output file, checking if it is equal to the
+			expected output */
 		if result, err := ioutil.ReadFile(outputFile); err != nil {
 			panic(err)
-		} else if string(result) != each[1] {
+		} else if string(result) != testCase[1] {
 			t.Errorf("\nTest fails when given the test case:\n\t\"%s\","+
 				"\n%s should contain:\n\t\"%s\",\n%s contains:\n\t\"%s\"\n\n",
-				each[0], outputFile, each[1], outputFile, string(result))
+				testCase[0], outputFile, testCase[1], outputFile, string(result))
 		}
 	}
 }
