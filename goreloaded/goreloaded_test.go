@@ -7,9 +7,8 @@ import (
 )
 
 func TestGoReloaded(t *testing.T) {
-	inputFile := "sample.txt"
-	outputFile := "result.txt"
-	args := []string{"cmd", inputFile, outputFile}
+	inputFile, outputFile := "sample.txt", "result.txt"
+	//args := []string{"cmd", inputFile, outputFile}
 
 	testCases := [][]string{
 		{"If I make you BREAKFAST IN BED (low, 3) just say thank you instead of: how (cap) did you get in my house (up, 2) ?",
@@ -27,13 +26,13 @@ func TestGoReloaded(t *testing.T) {
 			panic(err)
 		}
 
-		os.Args = args
+		os.Args = []string{"cmd", inputFile, outputFile}
 		GoReloaded()
 
-		if actual, err := ioutil.ReadFile(outputFile); err != nil {
+		if result, err := ioutil.ReadFile(outputFile); err != nil {
 			panic(err)
-		} else if string(actual) != each[1] {
-			t.Errorf("Test failed, expected \"%s\", got \"%s\"", each[1], string(actual))
+		} else if string(result) != each[1] {
+			t.Errorf("Test failed, expected:\n\"%s\",\ngot:\n\"%s\"", each[1], string(result))
 		}
 	}
 }
