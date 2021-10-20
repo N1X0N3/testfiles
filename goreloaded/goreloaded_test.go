@@ -24,8 +24,8 @@ func TestGoReloaded(t *testing.T) {
 			"I have to pack 5 outfits. Packed 26 just to be sure"},
 		{"Don't be sad ,because sad backwards is das . And das not good",
 			"Don't be sad, because sad backwards is das. And das not good"},
-		{"harold wilson (cap, 2) : ' I’m a optimist ,but a optimist who carries a raincoat . '",
-			"Harold Wilson: 'I’m an optimist, but an optimist who carries a raincoat.'"},
+		{"harold wilson (cap, 2) : ' I am a optimist ,but a optimist who carries a raincoat . '",
+			"Harold Wilson: 'I am an optimist, but an optimist who carries a raincoat.'"},
 	}
 
 	for _, testCase := range testCases {
