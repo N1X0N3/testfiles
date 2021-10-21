@@ -39,7 +39,7 @@ func TestAsciiArt(t *testing.T) {
 	/*	Iterating over each of the keys in testCases, reading and storing the
 		contents of the corresponding files for each key	*/
 	for input := range testCases {
-		if output, err := ioutil.ReadFile("./testCases/" + input); err != nil {
+		if output, err := ioutil.ReadFile("./test-cases/" + input); err != nil {
 			panic(err)
 		} else {
 			testCases[input] = append(testCases[input], string(output))
