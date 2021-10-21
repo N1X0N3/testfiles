@@ -1,6 +1,0 @@
-[submodule "go-reloaded-testfile"]
-	path = go-reloaded-testfile
-	url = https://github.com/N1X0N3/go-reloaded-testfile
-[submodule "ascii-art-testfile"]
-	path = ascii-art-testfile
-	url = https://github.com/N1X0N3/ascii-art-testfile
