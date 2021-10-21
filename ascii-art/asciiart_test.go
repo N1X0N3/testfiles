@@ -58,7 +58,9 @@ func TestAsciiArt(t *testing.T) {
 			/*	Fails the project if the test cases expected output doesn't match
 				the actual output	*/
 			if string(result) != current[1] {
-				ti.Errorf("Test failed, expected:\n%s\ngot:\n%s\n", current[1], string(result))
+				ti.Errorf("\nTest fails when given the test case:\n\t\"%s\","+
+					"\nexpected:\n%s\ngot:\n%s\n\n",
+					current[0], current[1], string(result))
 			}
 		}(testCase, &wg, t)
 	}
