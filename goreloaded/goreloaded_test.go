@@ -3,16 +3,13 @@ package main
 import (
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"testing"
 )
 
 // This test file tests the go-reloaded project against the test cases on audit page
 func TestGoReloaded(t *testing.T) {
 	inputFile, outputFile := "sample.txt", "result.txt"
-
-	/*	Set the args that will be seen by the go-reloaded file to the file name, input
-		file and output file */
-	os.Args = []string{"cmd", inputFile, outputFile}
 
 	/*	Each element of testCases contains a pair of strings, the first string of the
 		pair is what is to be written to the input file, the second is what should be
@@ -34,8 +31,11 @@ func TestGoReloaded(t *testing.T) {
 			panic(err)
 		}
 
-		// CHANGE THIS FUNCTION TO YOUR FUNCTION NAME IF DIFFERENT
-		GoReloaded()
+		/*	Attempt to run the main project file with the input and output file
+			names as arguments	*/
+		if err := exec.Command("go", "run", ".", inputFile, outputFile).Run(); err != nil {
+			panic(err)
+		}
 
 		/*	Read the contents of the output file, checking if it is equal to the
 			expected output */
